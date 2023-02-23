@@ -1,0 +1,52 @@
+{
+   "timeZone": "America/New_York",
+   "exceptionLogging": "STACKDRIVER",
+   "runtimeVersion": "V8",
+   "dependencies": {
+     "enabledAdvancedServices": [
+       {
+         "userSymbol": "Gmail",
+         "serviceId": "gmail",
+         "version": "v1"
+       }
+     ]
+   },
+   "oauthScopes": [
+     "https://www.googleapis.com/auth/gmail.addons.current.action.compose",
+     "https://www.googleapis.com/auth/gmail.addons.current.message.readonly",
+     "https://www.googleapis.com/auth/gmail.addons.execute",
+     "https://www.googleapis.com/auth/script.locale",
+     "https://www.googleapis.com/auth/script.external_request"
+   ],
+   "urlFetchWhitelist": [
+     "YOUR API HTTP URL"
+   ],
+   "addOns": {
+     "common": {
+       "name": "💌 MailGPT",
+       "logoUrl": "https://raw.githubusercontent.com/mariusndini/MailGPT/main/MailGPT-Logo.png",
+       "useLocaleFromApp": true,
+       "homepageTrigger": {
+         "runFunction": "createCard",
+         "enabled": true
+       },
+       "universalActions": [
+         {
+           "label": "Learn more - chatGPT & MailGPT",
+           "openLink": "https://chat.openai.com/chat"
+         }
+       ]
+     },
+     "gmail": {
+       "composeTrigger": {
+         "selectActions": [
+           {
+             "text": "Mail GPT",
+             "runFunction": "createCard"
+           }
+         ],
+         "draftAccess": "NONE"
+       }
+     }
+   }
+ }
