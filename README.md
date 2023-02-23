@@ -9,7 +9,7 @@ This demo allows users ask OpenAI's ChatGPT to asisst them in their EMail tasks.
 <br>
 
 ## Architecture
-The simplified architecture is pictured below and the code is provided in its respective folder. 
+The architecture is pictured below and the code is provided in its respective folder in this repo. 
 ![Arch](./imgs/MailGPT-Arch.png)
 
 <br>
@@ -18,7 +18,7 @@ The simplified architecture is pictured below and the code is provided in its re
 The app, as pictured below, has two inputs, the first is the EMail the sender is drafting and the second is the <b>ask</b> or <b>task</b> for ChatGPT. The asks are open ended and can be anything the user wishes. 
 
 
-|Below the user is asking for their EMail to be more professional.|MailGPT responds with the following output.|
+|User prompts to for more professional Email.|MailGPT responds with the following output.|
 | ---      | ---       |
 | ![Input](imgs/MailGPT-Input.png) | ![output](imgs/MailGPT-Output.png)         |
 
@@ -49,7 +49,7 @@ MailGPT utilizes AWS Cloud infrastructure (Azure, GCP or even on-prem are easily
 
 The card application above will pass the data to a Lambda Function via an HTTP post call defined API Gateway. This is a simple middleware layer to interface with ChatGPT.
 
-It can be extended to include much more complex logic but also be reused accross many applications and use cases.
+It can be extended to include much more complex logic but also be reused across many applications and use cases.
 
 <br>
 
@@ -60,7 +60,7 @@ HTTP Post call via AWS API Gateway front ends Lambda. API Gateway from the GMail
 <br>
 
 ## Lambda Function
-The lambda function below takes the promp from the API to pass to OpenAI's trained <b>text-davinci-003</b> model. [Read more about OpenAI's available models here](https://platform.openai.com/docs/models/gpt-3).
+The lambda function below takes the prompt from the API to pass to OpenAI's trained <b>text-davinci-003</b> model. [Read more about OpenAI's available models here](https://platform.openai.com/docs/models/gpt-3).
 
 <i>My language of choice for Lambda functions is Node.js. OpenAI offers support for Python, Javascript & cURL.</i>
 
